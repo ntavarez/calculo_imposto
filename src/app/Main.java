@@ -28,6 +28,19 @@ public class Main {
 			System.out.println("Renda anual: ");
 			Double rendaAnual = sc.nextDouble();
 			
+			if(tipo == 'F') { //
+				System.out.println("Gastos com saúde: ");
+				Double GastosSaude = sc.nextDouble();
+				
+				PessoaFisica pessoa = new PessoaFisica(nome, rendaAnual, GastosSaude);
+				lista.add(pessoa);
+			} else {
+				System.out.println("Número de funcionários: ");
+				Integer numeroFuncionarios = sc.nextInt();
+				
+				PessoaJuridica empresa = new PessoaJuridica(nome, rendaAnual, numeroFuncionarios);
+				lista.add(empresa);
+			}
 			
 		}
 		
