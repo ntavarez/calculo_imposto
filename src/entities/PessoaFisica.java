@@ -19,6 +19,20 @@ public class PessoaFisica extends Contribuinte{
 
 	@Override
 	public double imposto() {
-		return 0;
+		double impostoBasico;
+		
+		if(getRendaAnual() < 20000.0) {
+			impostoBasico = getRendaAnual() * 0.15;
+		} else {
+			impostoBasico = getRendaAnual() * 0.25;
+		}
+		
+		impostoBasico -= gastosSaude * 0.5;
+		
+		if(impostoBasico < 0.0) {
+			impostoBasico = 0.0;
+		}
+		
+		return impostoBasico;
 	}
 }
