@@ -50,6 +50,13 @@ public class Main {
 			System.out.println(contribuinte.getNome() + ": R$ " + String.format("%.2f", contribuinte.imposto()));
 		}
 		
+		double soma = 0.0;
+		for(Contribuinte contribuinte : lista) {
+			soma+= contribuinte.imposto();
+		}
+		
+		System.out.println("IMPOSTO TOTAL: R$ " + String.format("%.2f", soma));
+		
 		sc.close();
 	}
 
