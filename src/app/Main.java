@@ -23,6 +23,12 @@ public class Main {
 			System.out.println("Dados do contribuinte #" + i);
 			System.out.println("Pessoa Física ou Jurídica (F/J)? ");
 			char tipo = sc.next().charAt(0);
+			
+			while(tipo != 'F' && tipo != 'J') {
+				System.out.println("Caractere inválido! Favor inserir uma das opções sugeridas.");
+				tipo = sc.next().charAt(0);
+			}
+			
 			System.out.println("Nome: ");
 			String nome = sc.next();
 			System.out.println("Renda anual: ");
