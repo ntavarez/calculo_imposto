@@ -41,7 +41,13 @@ public class Main {
 				PessoaJuridica empresa = new PessoaJuridica(nome, rendaAnual, numeroFuncionarios);
 				lista.add(empresa);
 			}
-			
+		}
+		
+		System.out.println();
+		System.out.println("IMPOSTOS PAGOS:");
+		
+		for(Contribuinte contribuinte : lista) {
+			System.out.println(contribuinte.getNome() + ": R$ " + String.format("%.2f", contribuinte.imposto()));
 		}
 		
 		sc.close();
